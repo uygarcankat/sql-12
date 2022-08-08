@@ -27,7 +27,7 @@ where title in (
                              
                              
                              
-       4) select  customer.customer_id, concat(first_name, ' ' ,last_name) as customers , count(payment_id)from payment
+       4) select  customer.customer_id, concat(first_name, ' ' ,last_name) as customers , count(payment_id) as count_payment_id from payment
 left join customer on payment.customer_id = customer.customer_id
 group by customer.customer_id
 order by count (payment_id) desc;
